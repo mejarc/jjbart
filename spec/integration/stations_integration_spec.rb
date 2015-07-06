@@ -23,7 +23,7 @@ require 'spec_helper'
 #   ]
 # }
 
-describe 'GET /stations/:id', :vcr do
+describe 'GET /stations/:id', :vcr, :focus do
   context 'when a station is requested' do
     it 'returns a single station' do
 

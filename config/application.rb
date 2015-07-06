@@ -26,5 +26,6 @@ module Bartapi
 
     config.versioncake.supported_version_numbers = (1...4)
     config.versioncake.extraction_strategy       = :query_parameter # for simplicity
+    config.action_controller.perform_caching = true
   end
 end

@@ -23,20 +23,6 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
---
--- Name: postgis; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA public;
-
-
---
--- Name: EXTENSION postgis; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION postgis IS 'PostGIS geometry, geography, and raster spatial types and functions';
-
-
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -213,13 +199,6 @@ ALTER TABLE ONLY stops
 
 
 --
--- Name: index_on_stations_location; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_on_stations_location ON stations USING gist (st_geographyfromtext((((('SRID=4326;POINT('::text || (gtfs_longitude)::text) || ' '::text) || (gtfs_latitude)::text) || ')'::text)));
-
-
---
 -- Name: index_routes_stations_on_route_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -263,6 +242,4 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20150117121258');
 
 INSERT INTO schema_migrations (version) VALUES ('20150117122051');
-
-INSERT INTO schema_migrations (version) VALUES ('20150122043556');
 
