@@ -33,6 +33,13 @@ RSpec.describe StationsController, :type => :controller do
     end
   end
 
+  describe "GET show_by_abbr" do
+    it "fetches a station by its abbreviation" do
+      station = Station.create! valid_attributes
+      get :show_by_abbr, {:abbr => station[:abbr].downcase.to_param}, valid_session
+      expect(assigns(:station)).to eq(station)
+    end
+  end
   describe "POST create" do
     describe "with valid params" do
       xit "creates a new Station" do

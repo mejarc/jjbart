@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :stations, except: [:new, :edit]
+  get 'stations/:abbr', to: 'stations#show_by_abbr', 
+      constraints: { abbr: /[a-zA-Z]+/ }, via: :get
+  resources :stations, 
+            except: [:new, :edit],
+            contraints: { format: 'json'}
   get 'arrivals/:station' => 'arrivals#show'
-  resources :stations, contraints: { format: 'json'}
   root 'stations#index'
 end

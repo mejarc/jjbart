@@ -22,6 +22,10 @@ gem 'versioncake'
 # Request Layer
 gem 'httparty'
 
+# So that we can customize JSON
+gem "active_model_serializers", 
+     github: "rails-api/active_model_serializers"
+
 # Testing
 group :test, :development do
   gem 'rspec-rails'
@@ -30,4 +34,5 @@ group :test, :development do
   gem "rack-test", require: "rack/test"
   gem "factory_girl_rails", "~> 4.0"
   gem "json-schema"
+  gem 'simplecov'
 end

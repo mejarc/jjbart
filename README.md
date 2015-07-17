@@ -2,12 +2,14 @@
 > Template project for Carbon Five's Junior Jump Event
 
 **Your Task (Should you choose to accept it)**
-- Obtain & cache all 45 stations for the BART network from the official XML service (http://api.bart.gov/docs/stn/stns.aspx)
-- Expose all the stations in JSON via a /stations.json endpoint
-- Expose a single station in JSON via a /stations/:abbr.json endpoint
+- ~~Obtain & cache all 45 stations for the BART network from the official XML service (http://api.bart.gov/docs/stn/stns.aspx)~~
+- ~~Expose all the stations in JSON via a /stations.json endpoint~~
+- ~~Expose a single station in JSON via a /stations/:abbr.json endpoint~~
+- ~~Expose a single station in JSON via a /stations/:id.json~~
 - Practice BDD development. Create additional specs for any services, models, etc you create
-- Get the `stations_integration_spec` passing
+- Get the `stations_integration_spec` passing (TODO)
 - Your implementation should support future expansion to other BART endpoints 
+  */stations/:county.json?*
 
 **Requirements**
 - Ruby 2.2.0+

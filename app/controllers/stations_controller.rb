@@ -10,8 +10,14 @@ class StationsController < ApplicationController
   # GET /stations/1
   # GET /stations/1.json
   def show
-    @station = Station.find(params[:id])
+    @station = Station.find_by_id!(params[:id])
+    render json: @station
+  end
 
+# GET /stations/woak
+  # GET /stations/woak.json
+  def show_by_abbr
+    @station = Station.find_by_abbr!(params[:abbr].upcase)
     render json: @station
   end
 
@@ -51,6 +57,6 @@ class StationsController < ApplicationController
   private
     
     def station_params
-      params.require(:station).permit(:name, :short_name, :latitude, :longitude, :address, :city, :state, :zipcode, :county)
+      params.require(:station).permit(:id, :name, :abbr, :latitude, :longitude, :address, :city, :state, :zipcode, :county)
     end
 end

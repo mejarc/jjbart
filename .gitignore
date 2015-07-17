@@ -22,3 +22,6 @@
 
 #ignore RubyMine files
 /.idea
+
+#ignore SimpleCov
+coverage

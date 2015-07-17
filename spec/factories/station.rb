@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :station do
     name "Fake Montgomery St."
-    abbr "MONT"
+    abbr "FAKEMONT"
     gtfs_latitude "37.789256"
     gtfs_longitude "-122.401407"
     address "598 Market Street"
